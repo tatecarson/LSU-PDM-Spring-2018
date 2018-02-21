@@ -12,6 +12,8 @@
   * Tone.Editor
     * <https://github.com/willurmston/Tone.Editor>
     * some things are broken but still useful for testing out parameters
+* Setting up a local server 
+  * [Download Node](https://nodejs.org/en/)
 * example 1:
   * [Including tone](1_includingTone_FINISHED/sketch.js)
   * include p5.dom in html file
@@ -32,10 +34,11 @@
     * <https://tonejs.github.io/docs/r11/Players>
       * useful for grouping together like sounds
 * example 2: add ability to play multiple files
-  * 3_TonePlayersMultisample_START
+  * [Multiple samples](3_TonePlayersMultisample_FINISHED/sketch.js)
   * add multiple Tone.Player objects together
   * add buttons to play each file
 * example 3: add effects to each 
+  * [Effects](4_TonePlayersFX_FINISHED/sketch.js)
   * give an overview of effects from the API
   * add effects to each file
   * add ways to control each effect
