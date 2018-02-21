@@ -56,4 +56,7 @@ Use [this](0_p5-tone-starter) to start new projects.
 * add effects to each file
 * add ways to control each effect
 * add labels
+* also see Tone wiki for more info
+  * [Effects](https://github.com/Tonejs/Tone.js/wiki/Effects)
+  * [Connections](https://github.com/Tonejs/Tone.js/wiki/Connections)
 
