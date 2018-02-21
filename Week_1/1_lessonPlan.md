@@ -13,7 +13,7 @@
     * <https://github.com/willurmston/Tone.Editor>
     * some things are broken but still useful for testing out parameters
 * example 1:
-  * [Including tone](./1_includingTone_FINISHED/index.html)
+  * [Including tone](1_includingTone_FINISHED/index.html)
   * include p5.dom in html file
   * grab sound file
     * [freesound](http://www.freesound.org)
