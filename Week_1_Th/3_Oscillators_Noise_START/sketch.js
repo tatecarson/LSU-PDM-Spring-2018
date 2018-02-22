@@ -28,7 +28,7 @@ function setup() {
 	gainNode = new Tone.Gain();
 	mult.connect(gainNode);
 
-	// gainNode.toMaster();
+	gainNode.toMaster();
 
 	// var noise = new Tone.Noise('pink').start();
 
