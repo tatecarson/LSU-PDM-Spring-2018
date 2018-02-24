@@ -3,7 +3,8 @@ var osc1,
 	osc3,
 	noise,
 	mult,
-	filt;
+	filt,
+	signal;
 
 function setup() {
 	Nexus.context = Tone.context // or another audio context you have created
@@ -20,14 +21,14 @@ function setup() {
 
 	// osc3 = new Tone.Oscillator(500, "sine").start();
 
+
 	mult = new Tone.Multiply();
 	osc1.connect(mult, 0, 0);
 	osc2.connect(mult, 0, 1);
 	// osc3.connect(mult, 0, 2);
 
-	gainNode = new Tone.Gain();
+	gainNode = new Tone.Gain(0.8);
 	mult.connect(gainNode);
-
 	gainNode.toMaster();
 
 	// var noise = new Tone.Noise('pink').start();
