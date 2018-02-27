@@ -1,27 +1,30 @@
 var osc,
 	ampEnv,
-	gainNode,
-	modEnv;
+	freqEnv;
 
 function setup() {
-	osc = new Tone.OmniOscillator('440', 'pwm').start();
-
-	gainNode = new Tone.Gain();
-
 	//to control the gain, but can really control anything
-	ampEnv = new Tone.Envelope({
-		"attack": 0.1,
+	ampEnv = new Tone.AmplitudeEnvelope({
+		"attack": 2,
 		"decay": 0.2,
-		"sustain": 1,
-		"release": 0.8,
+		"sustain": 1.0,
+		"release": 2
+	}).toMaster();
+
+	freqEnv = new Tone.FrequencyEnvelope({
+		"attack": 0.2,
+		"baseFrequency": "C2",
+		"octaves": 4
 	});
 
-	//assign the envelope to the gain
-	ampEnv.connect(gainNode.gain);
+	ampEnv.attackCurve = 'ripple';
+	ampEnv.releaseCurve = 'bounce';
 
-	//now connect osc to gain node 
-	osc.connect(gainNode);
-	gainNode.toMaster();
+	osc = new Tone.OmniOscillator('440', 'pwm')
+		.connect(ampEnv)
+		.start();
+
+	freqEnv.connect(osc.frequency);
 }
 
 function keyPressed() {
@@ -29,11 +32,13 @@ function keyPressed() {
 	if (keyCode == 49) {
 		osc.frequency.value = 300;
 		ampEnv.triggerAttackRelease(2);
+		freqEnv.triggerAttackRelease(2);
 		console.log("1");
 	} else if (keyCode == 50) {
 		console.log("2");
 		osc.frequency.value = 400;
 		ampEnv.triggerAttackRelease(2);
+		freqEnv.triggerAttackRelease(2);
 	} else if (keyCode == ENTER) {
 		ampEnv.attack = random(0.1, 1);
 		ampEnv.decay = random(0.2, 0.5);
