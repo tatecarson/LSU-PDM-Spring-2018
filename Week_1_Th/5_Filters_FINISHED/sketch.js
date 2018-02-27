@@ -23,5 +23,5 @@ function setup() {
 
 function draw() {
 	filt.frequency.value = mouseX;
-	console.log(map(mouseX, 0, windowWidth, 20, 12000))
+	// console.log(map(mouseX, 0, windowWidth, 20, 12000))
 }

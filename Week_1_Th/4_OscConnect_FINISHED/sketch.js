@@ -1,5 +1,5 @@
 var osc1,
-	osc2,
+	// osc2,
 	osc3,
 	noise;
 

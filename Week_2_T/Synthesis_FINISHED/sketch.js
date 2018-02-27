@@ -15,12 +15,13 @@ function setup() {
 	lfo.connect(highFilter.frequency);
 
 	osc1 = new Tone.Oscillator(400, "sine").start();
-	osc2 = new Tone.Oscillator(50, "sine").start();
+	osc2 = new Tone.Oscillator(399, "sine").start();
 	mult = new Tone.Multiply();
 	osc1.connect(mult, 0, 0);
 	osc2.connect(mult, 0, 1);
 
-	gainNode = Tone.context.createGain();
+	gainNode = new Tone.Gain();
+
 	env = new Tone.Envelope({
 		"attack": 0.1,
 		"decay": 0.2,
