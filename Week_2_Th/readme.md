@@ -10,22 +10,12 @@ Tone has many prebuilt instruments that already have an envelope and other proce
 
 Here are some instrument [presets](https://tonejs.github.io/Presets/) for inspiration. 
 
-To explore these 
-
-
 ### Polyphony
 
 var polySynth;
 polySynth = new Tone.PolySynth(6, Tone.Synth).toMaster();
 polySynth.set("detune", -1200);
 polySynth.triggerAttackRelease(["C4", "E4", "A4"], "4n");
-
-### Physical Modeling
-
-
-var pluckySynth;
-pluckySynth = new Tone.PluckSynth().toMaster();
-pluckySynth.triggerAttack("E4");
 
 ### Scheduling values of signals 
 

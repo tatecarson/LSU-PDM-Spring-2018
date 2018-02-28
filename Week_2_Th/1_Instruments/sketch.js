@@ -1,4 +1,4 @@
-var duoSynth, fmSynth, metalSynth, membrane;
+var duoSynth, fmSynth, metalSynth, membrane, polySynth;
 
 function setup() {
 	//Visualization 
@@ -76,10 +76,13 @@ function setup() {
 	}).toMaster();
 
 	membrane = new Tone.MembraneSynth().toMaster();
+
+	polySynth = new Tone.PolySynth(6, Tone.Synth).toMaster();
+	// polySynth.set("detune", -1200);
 }
 
 function mousePressed() {
-	play(membrane);
+	play(polySynth);
 }
 //lets schedule some events in a function so it can be turned 
 //on and off 
@@ -100,6 +103,12 @@ function play(synth) {
 			synth.frequency.setValueAtTime(150, '+2');
 			synth.frequency.setValueAtTime(300, "+3");
 		}
+	} else if (synth == polySynth) {
+		//shuffle with lodash?
+		synth.triggerAttackRelease(["C4", "E4", "A4"], '4n', "+0.1")
+		synth.triggerAttackRelease(["C4", "E4", "A4"], '4n', "+1")
+		synth.triggerAttackRelease(["C4", "E4", "A4"], '8n', "+2")
+		synth.triggerAttackRelease(["C4", "E4", "A4"], '8n', "+3");
 	} else {
 		//other synths take freq values 
 		synth.triggerAttackRelease('C4', '4n', "+0.1")
