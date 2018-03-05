@@ -93,7 +93,7 @@ lfo.connect(filter.frequency);
 ```
 LFOs should be `started` at some point. 
 
-These are also good to look at in audio programs if you have access to one. Check out [this] (https://www.youtube.com/watch?v=YEHnd9b79Uc) video for more explanation. 
+These are also good to look at in audio programs if you have access to one. Check out [this](https://www.youtube.com/watch?v=YEHnd9b79Uc) video for more explanation. 
 
 ### Changing values of signals 
 
