@@ -59,7 +59,7 @@ ampEnv.triggerAttackRelease(2);
 
 If you want to chain elements together make sure that when you initialize them that you don't send them directly `toMaster()`. This will skip any routing you have set up and just send that sound directly to your speakers. Try to imagine what you are telling tone to do the the signal path if you are getting unexpected results. 
 
-### What is a filter again?
+### Filter review
 
 A filter allows certain frequencies to pass through and cuts out others. It might be helpful to test these in an audio program to see how they sound before coding. 
 
@@ -79,11 +79,11 @@ Combines both, cutting low and high
 
 `	filter = new Tone.Filter(100, "highpass").toMaster()`
 
+[Here](https://www.youtube.com/watch?v=rkwS6vigSyE) is a good intro video if you want more explanation. 
+
 ### Modulate sounds with modulators / LFOs
 
-TODO: what is an LFO again? 
-
-Filters cannot be used to modulate sounds, they are used to change the timbre of sounds. Modulators can modulate filters. The modulators we have used so far are envelopes and LFOs. 
+Filters cannot be used to modulate sounds, they are used to change the timbre of sounds. Modulators can modulate filters, but also can modulate any other parameter. The modulators we have used so far are envelopes and LFOs. 
 
 LFOs modulate parameters but do not connect directly to other oscillators. Here's an example of an LFO modulating the frequency of a filter: 
 
@@ -93,7 +93,7 @@ lfo.connect(filter.frequency);
 ```
 LFOs should be `started` at some point. 
 
-### 
+These are also good to look at in audio programs if you have access to one. Check out [this] (https://www.youtube.com/watch?v=YEHnd9b79Uc) video for more explanation. 
 
 ### Changing values of signals 
 
@@ -104,3 +104,9 @@ If you want to change the value of a signal after a certain amount of time be su
 and now fixed: 
 
 `sineOsc.frequency.setValueAtTime("B6", '+1.0');`
+
+### Euclidian Rhythms 
+
+
+
+### Scales 
