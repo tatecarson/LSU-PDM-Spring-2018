@@ -61,7 +61,23 @@ If you want to chain elements together make sure that when you initialize them t
 
 ### What is a filter again?
 
-TODO: filter are blank 
+A filter allows certain frequencies to pass through and cuts out others. It might be helpful to test these in an audio program to see how they sound before coding. 
+
+## Lowpass filter AKA Highcut
+
+pass through frequencies below the cutoff frequency. The below example will pass all values above 100. 
+
+`	filter = new Tone.Filter(100, "lowpass").toMaster()`
+
+## Highpass filter AKA lowcut 
+
+passes frequencies above cutoff frequency. In the below example we only hear frequencies under 100. 
+
+## Bandpass 
+
+Combines both, cutting low and high 
+
+`	filter = new Tone.Filter(100, "highpass").toMaster()`
 
 ### Modulate sounds with modulators / LFOs
 
