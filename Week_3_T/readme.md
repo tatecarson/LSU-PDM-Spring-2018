@@ -8,10 +8,6 @@
 
 `osc.frequency.value = 'C4';`
 
-Signals do not take strings. You could convert the string into a frequency value like this: 
-
-`osc.frequency.value = Tone.Frequency("C3");`
-
 You may as well just change the frequency value with a triggerAttackRelease()
 
 `osc.triggerAttackRelease("C4", "8n")`
