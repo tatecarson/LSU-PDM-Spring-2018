@@ -6,6 +6,7 @@
 
 ### Setting frequency value 
 
+If you are just setting the note like this but not retriggering it the below change will not be heard. 
 `osc.frequency.value = 'C4';`
 
 You may as well just change the frequency value with a triggerAttackRelease()
