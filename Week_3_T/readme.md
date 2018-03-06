@@ -107,6 +107,10 @@ and now fixed:
 
 ### Euclidian Rhythms 
 
+Beetjs 
 
+two examples 
 
-### Scales 
+### Scales and Tunings
+
+[TuneJS](https://github.com/abbernie/tune)
