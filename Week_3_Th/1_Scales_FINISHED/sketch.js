@@ -1,4 +1,4 @@
-var synth, tune, noise, loop, seq;
+var synth, tune, noise, loop, seq, chain;
 
 function setup() {
 	//Visualization 
@@ -27,6 +27,23 @@ function setup() {
 
 	//Tone's way of doing random numbers, could also use p5.js random()
 	var random = new Tone.CtrlRandom(0.1, 1);
+
+	//control melody with markov chain 
+	chain = new Tone.CtrlMarkov({
+		"A3": [{
+			value: "B3",
+			probability: 0.2
+		}, {
+			value: "Ab2",
+			probability: 0.8
+		}],
+		"Ab2": ["Ab2", "C4", "E5"],
+		"E5": ["E5", "C4"],
+		"C4": "A3",
+		"B3": ["C4", "E5"]
+	});
+
+	chain.value = "A3";
 
 	synth = new Tone.FMSynth({
 		"harmonicity": 8,
@@ -64,11 +81,34 @@ function setup() {
 	//random.value - 
 	seq = new Tone.Sequence((time, note) => {
 		synth.triggerAttackRelease(pattern.next(), random.value, time)
-	}, pattern.values, '32n').start();
+	}, ['c4'], '32n');
+
+	var markSeq = new Tone.Sequence((time, note) => {
+		synth.triggerAttackRelease(chain.next(), 0.2, time)
+		console.log(chain.next())
+	}, ['c2'], '32n');
 
 	var loop0 = new Tone.Loop(function (time) {
 		synth0.triggerAttack("A2", time)
 	}, 0.5).start(0)
+
+
+	var melodytype = new Nexus.RadioButton('#melodytype', {
+		'size': [120, 25],
+		'numberOfButtons': 2,
+		'active': -1
+	});
+
+	melodytype.on('change', v => {
+		console.log(v)
+		if (v == 0) {
+			seq.start();
+			markSeq.stop();
+		} else if (v == 1) {
+			seq.stop();
+			markSeq.start();
+		}
+	});
 
 	var synthProb = new Nexus.Slider('#synthprob', {
 		'size': [120, 20],
@@ -95,5 +135,10 @@ function setup() {
 
 	var toggle = new Nexus.Toggle('#transport');
 
+	var tempo = new Nexus.Slider('#tempo', {
+		min: 50,
+		max: 200
+	});
+	tempo.on('change', v => Tone.Transport.bpm.value = v)
 	toggle.on('change', v => v ? Tone.Transport.start() : Tone.Transport.stop())
 }
