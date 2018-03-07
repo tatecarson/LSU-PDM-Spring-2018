@@ -93,16 +93,6 @@ function setup() {
 		console.log(v)
 	})
 
-	//TODO: maybe you can't update the scale while the transport is running
-	var chooseScale = new Nexus.Select('#scale', {
-		'size': [100, 30],
-		'options': ['slendro', 'ji_12', 'partch_43', 'lm_piano', 'johnston_81']
-	})
-	chooseScale.on('change', v => {
-		tune.loadScale(v.value);
-		console.log(v)
-	})
-
 	var toggle = new Nexus.Toggle('#transport');
 
 	toggle.on('change', v => v ? Tone.Transport.start() : Tone.Transport.stop())
