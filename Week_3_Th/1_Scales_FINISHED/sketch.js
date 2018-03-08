@@ -45,6 +45,7 @@ function setup() {
 
 	chain.value = "A3";
 
+	//show tone presets 
 	synth = new Tone.FMSynth({
 		"harmonicity": 8,
 		"modulationIndex": 2,
