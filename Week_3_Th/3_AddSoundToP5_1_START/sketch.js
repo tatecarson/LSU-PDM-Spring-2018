@@ -1,7 +1,4 @@
-let bubbles = [],
-	synth,
-	sampleDraw,
-	playRate;
+let bubbles = [];
 
 function setup() {
 	createCanvas(600, 400);
@@ -12,7 +9,6 @@ function setup() {
 		let b = new Bubble(x, y, r);
 		bubbles.push(b);
 	}
-	bubbles.forEach(e => e.initSound());
 }
 
 function draw() {
@@ -36,10 +32,8 @@ class Bubble {
 		let d = dist(px, py, this.x, this.y);
 		if (d < this.r) {
 			this.brightness = 255;
-			this.playSound()
 		} else {
 			this.brightness = 0;
-			this.stopSound()
 		}
 	}
 
@@ -53,20 +47,5 @@ class Bubble {
 		strokeWeight(4);
 		fill(this.brightness, 125);
 		ellipse(this.x, this.y, this.r * 2);
-	}
-
-	initSound() {
-		this.synth = new Tone.Synth().toMaster();
-		this.synth.triggerAttack();
-		this.synth.volume.value = -60;
-	}
-
-	playSound() {
-		this.synth.volume.rampTo(-6, 1);
-		this.synth.setNote('G4')
-	}
-
-	stopSound() {
-		this.synth.volume.rampTo(-60, 1)
 	}
 }
