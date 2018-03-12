@@ -21,6 +21,26 @@ function setup() {
 	createCanvas(574, 1024);
 	background(200);
 
+	/*
+	think about the below signal flow - we define elements in reverse order 
+	First noise source 
+	Noise -> Filter -> Amplitude Envelope 
+	
+	Modulation flow 
+	LFO -> Filter frequency 
+
+	Second noise source 
+	Noise -> Amplitude envelope 
+
+	AM Synthesis 
+	Osc1, Osc2 -> Multiply -> Gain Node -> Master 
+
+	Modulation - in this case we don't run sound into the envelope but it controls the amplitude of our signal 
+	Envelope -> gain of the gain node 
+
+	*/
+
+
 	//initialize the amplitude envelope and send to master
 	env2 = new Tone.AmplitudeEnvelope().toMaster();
 
@@ -47,10 +67,10 @@ function setup() {
 	noise = new Tone.Noise('white').connect(env3);
 
 	//start the noise - can be done up here because we trigger with envelope 
+	//starting a sound does not always mean that we will hear it immediately 
 	noise.start();
 
 	// AM Synthesis
-
 	osc1 = new Tone.Oscillator(400, "sine").start();;
 	osc2 = new Tone.Oscillator(50, "sine").start();;
 	mult = new Tone.Multiply();
@@ -67,16 +87,14 @@ function setup() {
 	});
 	env.connect(gainNode.gain);
 	mult.connect(gainNode);
-
-
 }
 
+//no audio events go in draw 
 function draw() {
 	fill(0, 50, 0);
 	textAlign(10, 10);
 	text(title, 10, 10);
 	text(instructions, 10, 30);
-
 }
 
 function mousePressed() {
@@ -90,17 +108,27 @@ function mouseReleased() {
 }
 
 function sonicEvent() {
-
+	//trigger brown noise as soon as the mouse is pressed 
+	//it helps to remember what your envelope is attached to 
+	//you could even name the envelope something like noiseEnv to help remember 
 	env2.triggerAttack();
 
-	env.triggerAttackRelease(1.6, "+0.25");
+	//set osc2 frequency to 50 right away 
+	osc2.frequency.value = 50;
 
-	osc2.frequency.value = 50.;
-	osc2.frequency.linearRampToValue(2, 3);
+	//change the frequency 
+	//linear ramp to value 2 over 3 seconds 
+	//go from 50 -> 2 
+	osc2.frequency.linearRampTo(2, 3);
+
+	//trigger AM Synthesis 0.25 seconds AFTER mouse is pressed 
+	env.triggerAttackRelease(1.6, "+0.25");
 }
 
 function sonicSilence() {
-	// Use if you need to turn something off.
+	//after mouse is released release brown noise 
 	env2.triggerRelease();
+
+	//after mouse is release trigger white noise 
 	env3.triggerAttackRelease(0.2);
 }
