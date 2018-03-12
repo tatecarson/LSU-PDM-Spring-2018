@@ -8,7 +8,11 @@
 * Correct way of starting and stopping things with mouse pressed 
 
 ### Timing issues with mousePressed
-If mousep is pressed is used you need to use the "+1" syntax to get whatever it is to trigger that much time **after** the mouse is pressed. 
+If mouse is pressed is used you need to use the "+1" syntax to get whatever it is to trigger that much time **after** the mouse is pressed. 
+
+Timing [wiki](https://github.com/Tonejs/Tone.js/wiki/Time)
+
+See timing example. 
 
 ### LFOs and modulation recap 
 

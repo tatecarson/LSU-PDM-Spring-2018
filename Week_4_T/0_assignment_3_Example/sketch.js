@@ -41,6 +41,7 @@ function setup() {
 	*/
 
 
+	//First Noise
 	//initialize the amplitude envelope and send to master
 	env2 = new Tone.AmplitudeEnvelope().toMaster();
 
@@ -77,7 +78,6 @@ function setup() {
 	osc1.connect(mult, 0, 0);
 	osc2.connect(mult, 0, 1);
 
-
 	gainNode = Tone.context.createGain().toMaster();
 	env = new Tone.Envelope({
 		"attack": 0.1,
@@ -85,6 +85,7 @@ function setup() {
 		"sustain": 0.5,
 		"release": 1.8,
 	});
+
 	env.connect(gainNode.gain);
 	mult.connect(gainNode);
 }
