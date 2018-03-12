@@ -23,11 +23,20 @@ function setup() {
 
 	/*
 	think about the below signal flow - we define elements in reverse order 
-	Audio flow 
+	First noise source 
 	Noise -> Filter -> Amplitude Envelope 
 	
 	Modulation flow 
 	LFO -> Filter frequency 
+
+	Second noise source 
+	Noise -> Amplitude envelope 
+
+	AM Synthesis 
+	Osc1, Osc2 -> Multiply -> Gain Node -> Master 
+
+	Modulation - in this case we don't run sound into the envelope but it controls the amplitude of our signal 
+	Envelope -> gain of the gain node 
 
 	*/
 
@@ -62,7 +71,6 @@ function setup() {
 	noise.start();
 
 	// AM Synthesis
-
 	osc1 = new Tone.Oscillator(400, "sine").start();;
 	osc2 = new Tone.Oscillator(50, "sine").start();;
 	mult = new Tone.Multiply();
@@ -79,8 +87,6 @@ function setup() {
 	});
 	env.connect(gainNode.gain);
 	mult.connect(gainNode);
-
-
 }
 
 //no audio events go in draw 
