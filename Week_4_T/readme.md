@@ -46,12 +46,6 @@ Be sure to check the documentation to make sure you are using the correct parame
 
 Make sure to use envelopes and LFOs that you set up. Often I see things that go no where and have no effect. If your signal path is Noise -> Filter -> Amplitude Envelope be sure that the only element that has a .toMaster() is the Amplitude Envelope because the signal flows from the noise through the filter and then gets sent to the speakers after the amplitude envelope. 
 
-#### Parameters
-
-Note array, note length, velocity (range of 0 - 1). 
-Velocity can not be greater than 1 or you will get an error. 
-`poly.triggerAttackRelease(["Eb3", "G4", "C5"], "2n");`
-
 ### Debugging 
 
 Remember to have your console open to check for errors. It will show you when something is not acting the way you think it is and which line the problem is at. 
