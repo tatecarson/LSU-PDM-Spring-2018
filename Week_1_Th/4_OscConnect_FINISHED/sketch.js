@@ -27,6 +27,7 @@ function setup() {
 	osc1.connect(mult, 0, 0);
 	osc2.connect(mult, 0, 1);
 
+
 	gainNode = new Tone.Gain();
 	mult.connect(gainNode);
 

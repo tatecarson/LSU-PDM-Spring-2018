@@ -14,7 +14,6 @@ function setup() {
 		synth.triggerAttackRelease('c4', timeFromNow);
 		fill(255)
 		ellipse(random(0, width), random(0, height), 20)
-
 	}, 2);
 
 	//stop after 10 iteratios;

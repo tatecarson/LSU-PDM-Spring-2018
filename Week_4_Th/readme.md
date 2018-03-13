@@ -1,9 +1,9 @@
-# Arduino Notes 	
-#LSU/Arduino
+# Arduino Notes
 
-Nice  [tutorials](https://www.arduino.cc/en/Tutorial/HomePage) 
+Nice [tutorials](https://www.arduino.cc/en/Tutorial/HomePage) 
 
-## Resistor values 
+## Reading resistor values
+
 [Resistor color code chart](http://www.resistorguide.com/resistor-color-code/)
 
 [Another chart ](http://www.resistorguide.com/pictures/resistor_color_codes_chart.png)
@@ -15,23 +15,4 @@ Nice  [tutorials](https://www.arduino.cc/en/Tutorial/HomePage)
 ## Reading schematics and circuit diagrams 
 ## Blinking LED 
 Example for blinking LED 
-
-## Analogue 
-### Inputs 
-Variable resistors  
-get either or both 
-* potentiometer 
-* light sensor - photo-resistor 
-* pressure sensor 
-
-### outputs 
-* LED
-* Piezo buzzer 
-
-## Digital 
-### inputs 
-* button 
-* toggle 
-* switch 
-
 
