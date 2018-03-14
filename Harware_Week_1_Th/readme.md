@@ -1,6 +1,7 @@
 # Arduino Notes
 
-Nice [tutorials](https://www.arduino.cc/en/Tutorial/HomePage) 
+* What is [Arduino](https://www.arduino.cc/en/Guide/Introduction)? An introduction. 
+* Arduino [tutorials](https://www.arduino.cc/en/Tutorial/HomePage) 
 
 ## Software setup 
 
@@ -20,7 +21,35 @@ Hardware [slides](hardware1-slides.pptx)
 
 ## Reading schematics and circuit diagrams 
 
+The circuit diagram shows you what your finished circuit should look like on the Arduino board. 
+
+The schematic is a more generic representation. 
+
+## Breadboard use 
+
+
 ## Blinking LED 
-Example for blinking LED 
+
+A blinking LED is the simplest way to show a physical output on the Arduino. 
 
 Blink [tutorial](http://www.arduino.cc/en/Tutorial/Blink) 
+
+We will use this example to send 5v to the LED to turn it on and then 0v to turn it off. This loops over and over. 
+
+### Functions 
+
+* pinMode - initialize pin 13 as an output
+* digitalWrite - write a value to that pin
+* delay - wait a certain amount of time between sending next value
+
+### Constants 
+
+* LED_BUILTIN - constant that makes sure your using the correct digital output pin number. If you were using a different board this constant would be a different number.
+* HIGH - send 5v to LED_BUILTIN
+* LOW - send 0v to LED_BUILTIN
+
+### Exercise 
+
+1. Change the delay time in the Arduino sketch and see how it effects the LED. Be sure to send the changed code to the board. 
+2. Detach part of the circuit. See how the external LED stops blinking but the onboard one keeps going. This is because the code is still running on the board even though you removed part of the circuit. 
+
