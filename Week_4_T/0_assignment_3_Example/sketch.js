@@ -24,20 +24,20 @@ function setup() {
 	/*
 	think about the below signal flow - we define elements in reverse order 
 	First noise source 
-	Noise -> Filter -> Amplitude Envelope 
+	Noise -> Filter -> Amplitude Envelope -> to master  
 	
 	Modulation flow 
 	LFO -> Filter frequency 
 
 	Second noise source 
-	Noise -> Amplitude envelope 
+	Noise -> Amplitude envelope -> to master 
 
 	AM Synthesis 
 	Osc1, Osc2 -> Multiply -> Gain Node -> Master 
 
-	Modulation - in this case we don't run sound into the envelope but it controls the amplitude of our signal 
+	Modulation - in this case we don't run sound into the 
+	envelope but it controls the amplitude of our signal 
 	Envelope -> gain of the gain node 
-
 	*/
 
 
@@ -45,8 +45,8 @@ function setup() {
 	//initialize the amplitude envelope and send to master
 	env2 = new Tone.AmplitudeEnvelope().toMaster();
 
-	//initialize the LFO at a frequency range of 10 hertz, oscillating 10 times a second 
-	//the oscillation are between 400 and 4000 
+	//initialize the LFO at a frequency range of 10 hertz, oscillating 
+	//10 times a second the oscillation are between 400 and 4000 
 	lfo = new Tone.LFO(10, 400, 4000).start();
 
 	//initialize the filter as a lowpass with a cutoff of 200 
@@ -99,8 +99,8 @@ function draw() {
 }
 
 function mousePressed() {
-	sonicEvent();
 	image(img, 0, 0);
+	sonicEvent();
 }
 
 function mouseReleased() {
@@ -120,7 +120,7 @@ function sonicEvent() {
 	//change the frequency 
 	//linear ramp to value 2 over 3 seconds 
 	//go from 50 -> 2 
-	osc2.frequency.linearRampTo(2, 3);
+	osc2.frequency.linearRampToValue(2, 3);
 
 	//trigger AM Synthesis 0.25 seconds AFTER mouse is pressed 
 	env.triggerAttackRelease(1.6, "+0.25");

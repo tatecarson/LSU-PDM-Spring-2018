@@ -8,10 +8,10 @@ function setup() {
 		size: 64
 	})
 
-	player = new Tone.Player('piano.wav').connect(fft).toMaster();
-	// player = new Tone.Player('dilla.mp3').connect(fft).toMaster();
+	// player = new Tone.Player('piano.wav').connect(fft).toMaster();
+	player = new Tone.Player('dilla.mp3').connect(fft).toMaster();
 
-	// player.autostart = true;
+	player.autostart = true;
 	player.loop = true;
 }
 

@@ -50,6 +50,7 @@ function Snake() {
         this.tail = [];
       }
     }
+    // startOverSound.start();
   }
 
   // Update location
