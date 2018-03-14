@@ -1,6 +1,6 @@
 # Arduino Notes
 
-* What is [Arduino](https://www.arduino.cc/en/Guide/Introduction)? An introduction. 
+* An introduction to [Arduino](https://www.arduino.cc/en/Guide/Introduction)
 * Arduino [tutorials](https://www.arduino.cc/en/Tutorial/HomePage) 
 
 ## Software setup 
