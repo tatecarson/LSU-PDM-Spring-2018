@@ -19,6 +19,8 @@ Hardware [slides](hardware1-slides.pptx)
 
 [Another chart ](http://www.resistorguide.com/pictures/resistor_color_codes_chart.png)
 
+[Color calculator](https://www.hobby-hour.com/electronics/resistorcalculator.php)
+
 ## Reading schematics and circuit diagrams 
 
 The circuit diagram shows you what your finished circuit should look like on the Arduino board. 
