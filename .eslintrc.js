@@ -3,7 +3,8 @@ module.exports = {
         "browser": true
     },
     "globals": {
-        "Tone": true
+        "Tone": true,
+        "Nexus": true
     },
     "extends": ["airbnb-base", "p5js", "p5js/dom", "p5js/sound"],
     "rules": {
