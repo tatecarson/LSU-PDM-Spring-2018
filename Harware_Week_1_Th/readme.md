@@ -19,7 +19,11 @@ Hardware [slides](hardware1-slides.pptx)
 
 [Another chart ](http://www.resistorguide.com/pictures/resistor_color_codes_chart.png)
 
+[Resistor video](https://www.youtube.com/watch?time_continue=79&v=SjlnW5g9np4)
+
 [Color calculator](https://www.hobby-hour.com/electronics/resistorcalculator.php)
+
+Figure out what resistor is needed using ohms law. This [calculator](https://www.rapidtables.com/calc/electric/ohms-law-calculator.html) could be handy. 
 
 ## Reading schematics and circuit diagrams 
 
