@@ -18,8 +18,7 @@ The range of analog write is 0 - 255
 
 ### Pulse width modulation (PWM)
 
-some good information from arduino:  
-[Arduino info](https://www.arduino.cc/en/Tutorial/PWM)
+Some good [information](https://www.arduino.cc/en/Tutorial/PWM) from arduino on PWM.
 
 A way to get analog results with digital means. A square wave is created and modulated at a certain tempo to get an analog effect.
 
@@ -29,4 +28,4 @@ A way to get analog results with digital means. A square wave is created and mod
 
 [Arduiono Tutorial](http://www.arduino.cc/en/Tutorial/AnalogInput)
 
-Using the value of analogRead as wait time between analogWrite high and low.
+Using the value of analogRead as wait time between analogWrite high and low. This makes the LED blink fast or slow.
