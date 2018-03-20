@@ -1,5 +1,5 @@
 {
     "board": "arduino:avr:uno",
     "port": "/dev/cu.usbmodem142441",
-    "sketch": "Harware_Week_2_T/1_Fading_FINISHED/1_Fading_FINISHED.ino"
+    "sketch": "Harware_Week_2_T/3_AnalogInput_FINISHED/3_AnalogInput_FINISHED.ino"
 }

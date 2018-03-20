@@ -16,7 +16,7 @@ This is our first example that writes an analog value. Where digital is either o
 
 The range of analog write is 0 - 255
 
-### Pulse width modulation (PWM)
+#### Pulse width modulation (PWM)
 
 Some good [information](https://www.arduino.cc/en/Tutorial/PWM) from arduino on PWM.
 
