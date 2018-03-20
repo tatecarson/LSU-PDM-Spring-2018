@@ -38,6 +38,13 @@ function setup() {
   // Pick a food location
   pickLocation();
 
+  distortion = new Tone.Distortion(0.8).toMaster();
+  distortion.wet.value = 0.1;
+
+  eatSound = new Tone.Player('sounds/Alert/Alert - 06.mp3')
+  eatSound.connect(distortion)
+
+  startOverSound = new Tone.Player('sounds/Voice/Voice - Cartoon Laugh 01.mp3').toMaster();
 }
 
 // Pick a food location
@@ -52,7 +59,11 @@ function draw() {
 
   // If the snake eats the food
   if (s.eat(food)) {
-
+    eatSound.start();
+    musicRate += 0.05;
+    eatSound.playbackRate = musicRate;
+    distortion.wet.value = constrain(musicRate / 2, 0, 1);
+    console.log(distortion.wet.value);
     fr += 2;
     frameRate(fr);
     pickLocation();

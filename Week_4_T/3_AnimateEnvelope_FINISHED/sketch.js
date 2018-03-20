@@ -31,7 +31,7 @@ function setup() {
 	Tone.Transport.loopEnd = "1:0";
 	Tone.Transport.loop = true;
 
-	Tone.Transport.start();
+	//    Tone.Transport.start();
 }
 
 function draw() {
@@ -39,6 +39,6 @@ function draw() {
 
 	//sample the value of the kick envelope 60 times a second 
 	//this is a great way to match a visualization to a sound 
-	ellipse(100, 100, kickEnvelope.value * 100)
+	ellipse(100, 100, kickEnvelope.value * 50)
 	// console.log(kickEnvelope.value)
 }

@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:uno",
+    "port": "/dev/cu.usbmodem142441",
+    "sketch": "Harware_Week_2_T/3_AnalogInput_FINISHED/3_AnalogInput_FINISHED.ino"
+}

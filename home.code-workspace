@@ -17,6 +17,9 @@
 		}
 	],
 	"settings": {
-		"editor.fontSize": 12
+		"editor.fontSize": 12,
+		"cSpell.words": [
+			"autostart"
+		]
 	}
 }
