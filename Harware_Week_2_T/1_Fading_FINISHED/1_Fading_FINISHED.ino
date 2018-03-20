@@ -22,6 +22,10 @@
 int ledPin = 9; // LED connected to digital pin 9
 
 //no setup for this sketch
+//we need it here anyway to compile
+void setup()
+{
+}
 
 void loop()
 {
