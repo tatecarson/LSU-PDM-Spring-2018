@@ -23,8 +23,6 @@ int ledPin = 9; // LED connected to digital pin 9
 
 //no setup for this sketch
 
-//
-
 void loop()
 {
   // fade in from min to max in increments of 5 points:
