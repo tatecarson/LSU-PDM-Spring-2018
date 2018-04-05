@@ -1,10 +1,12 @@
 # Arduino <--> p5js Communication
 
+First clone this repository, we will be using basic-sketch as a starter sketch for serial communication.
+
 See the [library](https://github.com/vanevery/p5.serialport) repository for more examples.
 
 ## Installation
 
-To communicate between Arduino and p5js you need two peices of software
+To communicate between Arduino and p5js you need two peices of software.
 
 ### p5.serialport
 
